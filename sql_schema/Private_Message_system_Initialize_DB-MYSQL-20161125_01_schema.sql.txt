@@ -1,0 +1,33 @@
+CREATE TABLE `chat` (
+ `Msg_ID` int(11) NOT NULL AUTO_INCREMENT,
+ `Sender` varchar(100) NOT NULL,
+ `Message` text NOT NULL,
+ PRIMARY KEY (`Msg_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `conversations` (
+ `conversation_id` int(8) NOT NULL AUTO_INCREMENT,
+ `conversation_subject` varchar(128) NOT NULL,
+ PRIMARY KEY (`conversation_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `conversations_members` (
+ `conversation_id` int(8) NOT NULL,
+ `user_id` int(8) NOT NULL,
+ `conversation_last_view` int(10) NOT NULL,
+ `conversation_deleted` int(1) NOT NULL,
+ UNIQUE KEY `unique` (`conversation_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `conversations_messages` (
+ `message_id` int(10) NOT NULL AUTO_INCREMENT,
+ `conversation_id` int(8) NOT NULL,
+ `user_id` int(8) NOT NULL,
+ `message_date` int(10) NOT NULL,
+ `message_text` text NOT NULL,
+ PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1
+
