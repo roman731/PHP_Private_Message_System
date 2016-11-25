@@ -5,7 +5,11 @@ It also has a 'group chat' feature which utilizes Ajax to allow users to have ve
 
 #ToDoList
 -A registration system (currently users have to be manually added to the database)
+
 -Ajax to auto refresh the main messaging from user to user.
+
 -Remove the 'Enter Name' field in the group chat, and just have the sender name be the user's login name.
+
 -Add a drop down menu in the direct messaging system which gives a list of users you can message (currently you have to know which users are already registerd)
+
 -Host the app online for demo purposes
