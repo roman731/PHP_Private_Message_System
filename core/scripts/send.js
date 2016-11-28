@@ -9,7 +9,7 @@ $('#form_input').submit(function(){
 			$('#feedback').html(data);
 
 			$('#feedback').fadeIn('slow', function(){
-				$('#feedback').fadeOut(4500);
+				//$('#feedback').fadeOut(4500);
 			});
 
 			$('#message').val('');

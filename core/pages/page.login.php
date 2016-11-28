@@ -22,4 +22,8 @@ if(isset($_POST['user_name'], $_POST['user_password']))
 <div>
 	<input type="submit" value="Login" />
 </div>
+<br />
+<div>
+	<a href="index.php?page=register">Need to register? Click here.</a>
+</div>
 </form>

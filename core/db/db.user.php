@@ -34,4 +34,21 @@ function db_user_fetch_ids($user_names)
 	return $names;
 }
 
+//checks if given username already exists
+function db_user_exists($user)
+{
+	$user = mysql_real_escape_string($user);
+	$result = mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `user_name` = '{$user}'");
+
+	return (mysql_result($result, 0) == '1') ? true : false;
+}
+
+function db_add_user($user, $pass)
+{
+	$user = mysql_real_escape_string(htmlentities($user));
+	$pass = sha1($pass);
+
+	mysql_query("INSERT INTO `users` (`user_name`, `user_password`) VALUES ('{$user}', '{$pass}')");
+}
+
 ?>

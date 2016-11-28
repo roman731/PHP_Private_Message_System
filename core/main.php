@@ -29,7 +29,7 @@ if(isset($_POST['user_name']))
 }
 
 //if they're not logged in
-if(empty($_SESSION['user_id']) && $_GET['page'] !== 'login')
+if(empty($_SESSION['user_id']) && $_GET['page'] !== 'login' && $_GET['page'] !== 'register')
 {
 	header('HTTP/1.1 403 Forbidden');
 	header('Location: index.php?page=login');
