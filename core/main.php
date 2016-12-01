@@ -18,9 +18,10 @@ session_start();
 
 if(isset($_POST['user_name']))
 {
-		if(($user_id = db_user_validate_credentials($_POST['user_name'], $_POST['user_password'])) !== false)
+	if(($user_id = db_user_validate_credentials($_POST['user_name'], $_POST['user_password'])) !== false)
 	{
 		$_SESSION['user_id'] = $user_id;
+		$_SESSION['user_name'] = $_POST['user_name'];
 
 		header('Location: index.php?page=inbox');
 

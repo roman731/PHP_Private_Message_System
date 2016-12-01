@@ -102,3 +102,30 @@ div.unread
     border: 1px solid grey;
 }
 
+
+
+
+#messages
+{
+	width: 500px;
+	height: 300px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid #CCC;
+	overflow: auto;
+}
+
+#input
+{
+	padding: 10px;
+}
+
+#feedback
+{
+	display: none;
+}
+
+textarea
+{
+	resize: none;
+}

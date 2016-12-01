@@ -1,5 +1,6 @@
 <?php
 
+	
 
 	if(isset($_POST['to'], $_POST['subject'], $_POST['body']))
 	{
@@ -68,7 +69,20 @@
 <form action="" method="POST">
 	<div>
 		<label for="to">To</label>
-		<input type="text" name="to" id="to" autocomplete="off" value="<?php if(isset($_POST['to'])) echo htmlentities($_POST['to']); ?>" />
+		<?php 
+			$names = db_fetch_users_list();
+
+			echo '<select name="to" style="width:172px; height: 23px;">';
+			for ($i = 0; $i < count($names); $i++) 
+			{
+			    echo '<option value="' . htmlspecialchars($names[$i]) . '">' 
+		        . htmlspecialchars($names[$i]) 
+		        . '</option>';
+			}
+			echo '</select>';
+
+		?>
+		<!--//<input type="text" name="to" id="to" autocomplete="off" value="<?php if(isset($_POST['to'])) echo htmlentities($_POST['to']); ?>" /> -->
 	</div>
 	<div>
 		<label for="subject">Subject</label>

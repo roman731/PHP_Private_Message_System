@@ -1,6 +1,10 @@
 <?php
 
-//require('includes/core.inc.php');
+//require('core/main.php');
+
+
+//echo "test2: {$_SESSION['user_name']}";
+
 
 ?>
 
@@ -8,12 +12,13 @@
 <html lang="en">
 	<head>
 		<title>Roman's PHP Chat App</title>
-		<!--<link type="text/css" rel="stylesheet" href="public/css/main.css" />-->
+		<!-- <link rel="stylesheet" type="text/css" href="../ext/css/main.css" /> -->
+
 	</head>
 	<body>
 	<a href="index.php?page=inbox" style="float: right;">Back</a>
 		<div id="input">
-			<div id="feedback"></div>
+			<div id="feedback" ></div>
 			<form action="#" method="post" id="form_input">
 					<label>Enter Name:<input type="text" name="sender" id="sender" autocomplete="off" /></label><br />
 					<label>Enter Message:<br /><textarea id="message" cols="50" rows="4" style="resize:none"></textarea></label><br /><br />

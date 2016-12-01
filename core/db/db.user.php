@@ -34,6 +34,21 @@ function db_user_fetch_ids($user_names)
 	return $names;
 }
 
+function db_fetch_users_list()
+{
+
+	$result = mysql_query("SELECT `user_name` FROM `users` ");
+
+	$names = array();
+
+	while(($row = mysql_fetch_assoc($result)) !== false)
+	{
+		array_push($names, $row['user_name']);
+	}
+
+	return $names;
+}
+
 //checks if given username already exists
 function db_user_exists($user)
 {
