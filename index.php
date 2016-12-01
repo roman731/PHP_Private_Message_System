@@ -7,9 +7,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <html lang="EN">
-	<head>
+	<head style="background-color: black;">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="ext/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="ext/css/bootstrap.min.css" />
+
+
+
 		<title>Roman's PHP Private Message App. </title>
 	</head>
 	<body>

@@ -3,7 +3,6 @@
 require('../../core/db/db.connect.php');
 require('../../core/db/db.chat.php');
 
-
 if(isset($_GET['sender']) && !empty($_GET['sender']))
 {
 	$sender = $_GET['sender'];
@@ -17,21 +16,21 @@ if(isset($_GET['sender']) && !empty($_GET['sender']))
 
 		if(db_chat_send_msg($sender, $message))
 		{
-			echo 'Message sent.';
+			echo '<div class="msg success">Message sent.</div>';
 		}
 		else
 		{
-			echo 'Message wasn\'t sent.';
+			echo '<div class="msg error">Message wasn\'t sent.</div>';
 		}
 	}
 	else
 	{
-		echo 'No message was entered';
+		echo '<div class="msg error">No message was entered.</div>';
 	}
 }
 else
 {
-	echo 'No name was entered.';
+	echo '<div class="msg error">No name was entered.</div>';
 }
 
 ?>

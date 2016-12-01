@@ -1,7 +1,5 @@
 <?php
 
-	
-
 	if(isset($_POST['to'], $_POST['subject'], $_POST['body']))
 	{
 		$errors = array();
@@ -70,9 +68,9 @@
 	<div>
 		<label for="to">To</label>
 		<?php 
-			$names = db_fetch_users_list();
+			$names = db_fetch_users_list($_SESSION['user_name']);
 
-			echo '<select name="to" style="width:172px; height: 23px;">';
+			echo '<select name="to" class="form-control" style="width:172px; height: 35px;">';
 			for ($i = 0; $i < count($names); $i++) 
 			{
 			    echo '<option value="' . htmlspecialchars($names[$i]) . '">' 
@@ -86,12 +84,12 @@
 	</div>
 	<div>
 		<label for="subject">Subject</label>
-		<input type="text" name="subject" id="subject" autocomplete="off" value="<?php if(isset($_POST['subject'])) echo htmlentities($_POST['subject']); ?>"/>
-	</div>
+		<input type="text" name="subject" class="form-control" style="width:300px; height: 35px;" id="subject"  autocomplete="off" value="<?php if(isset($_POST['subject'])) echo htmlentities($_POST['subject']); ?>"/>
+	</div><br />
 	<div>
-		<textarea name="body" rows="20" cols="110"><?php if(isset($_POST['body'])) echo htmlentities($_POST['body']); ?></textarea>
-	</div>
+		<textarea name="body" class="form-control" rows="20" cols="110"><?php if(isset($_POST['body'])) echo htmlentities($_POST['body']); ?></textarea>
+	</div><br />
 	<div>
-		<input type="submit" value="send" />
+		<input type="submit" class="btn btn-success" value="send" />
 	</div>
 </form>

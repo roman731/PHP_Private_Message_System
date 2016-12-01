@@ -34,10 +34,11 @@ function db_user_fetch_ids($user_names)
 	return $names;
 }
 
-function db_fetch_users_list()
+// gets a list of users from the DB except for the user that you're logged in as
+function db_fetch_users_list($user)
 {
 
-	$result = mysql_query("SELECT `user_name` FROM `users` ");
+	$result = mysql_query("SELECT `user_name` FROM `users` WHERE `user_name` != '{$user}' ");
 
 	$names = array();
 

@@ -7,6 +7,7 @@ require("{$core_path}/db/db.user.php");
 require("{$core_path}/db/db.conversations.php");
 require("{$core_path}/db/db.chat.php");
 
+
 if (empty($_GET['page']) || in_array("page.{$_GET['page']}.php", scandir("{$core_path}/pages")) == false)
 {
 	header('HTTP/1.1 404 Not Found');

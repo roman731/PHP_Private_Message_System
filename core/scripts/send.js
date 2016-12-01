@@ -1,7 +1,6 @@
 $('#form_input').submit(function(){
 	var message = $('#message').val();
 	var sender = $('#sender').val();
-	alert('here');
 	$.ajax({
 		url: 'core/scripts/Send.php',
 		data: { sender: sender, message: message},
